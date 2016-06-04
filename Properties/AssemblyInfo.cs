@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("BatchDomainTools")]
 [assembly: AssemblyDescription("Программа для пакетной работы с доменами и поддоменами")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("http://batchdomaintools.com/")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("BatchDomainTools")]
 [assembly: AssemblyCopyright("BatchDomainTools ©  2013")]
 [assembly: AssemblyTrademark("")]
