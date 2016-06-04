@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65CD8D9A-BB23-49AD-B8E4-CE6737BA38CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BatchDomainTools</RootNamespace>
+    <AssemblyName>BatchDomainTools</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>BatchDomainTools.Program</StartupObject>
+    <ApplicationIcon>faicon.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PublicPrivateKeyFile.snk</AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountViewForm.Designer.cs">
+      <DependentUpon>AccountViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionsTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActionsTaskForm.Designer.cs">
+      <DependentUpon>ActionsTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IWebPanelBasicActions\IAdd.cs" />
+    <Compile Include="IWebPanelBasicActions\IEdit.cs" />
+    <Compile Include="IWebPanelBasicActions\IGet.cs" />
+    <Compile Include="IWebPanelBasicActions\IRemove.cs" />
+    <Compile Include="IWebPanelObjectActions\IDomainActions\IDomainAdd.cs" />
+    <Compile Include="IWebPanelObjectActions\IDomainActions\IDomainEdit.cs" />
+    <Compile Include="IWebPanelObjectActions\IDomainActions\IDomainGet.cs" />
+    <Compile Include="IWebPanelObjectActions\IDomainActions\IDomainRemove.cs" />
+    <Compile Include="IWebPanelObjectActions\ISubDomainActions\ISubDomainAdd.cs" />
+    <Compile Include="IWebPanelObjectActions\ISubDomainActions\ISubDomainEdit.cs" />
+    <Compile Include="IWebPanelObjectActions\ISubDomainActions\ISubDomainGet.cs" />
+    <Compile Include="IWebPanelObjectActions\ISubDomainActions\ISubDomainRemove.cs" />
+    <Compile Include="Setting.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\ProgressBar\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\ProgressBar\ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\ProgressBar\ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\BseColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\BseRenderer.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\ColorTableBlack.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\ColorTableBlue.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\Office2007BlackColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\Office2007BlueColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\Office2007Renderer.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\Office2007SilverColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\OfficeColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Renderer\ProfessionalColorTable.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\Splitter\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\Splitter\Splitter.Designer.cs">
+      <DependentUpon>Splitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\BasePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\CaptionStyle.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\ColorScheme.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\ColorSchemeChangeEventArgs.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\Constants.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\CustomColors.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\CustomPanelColors.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\CustomXPanderPanelColors.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\DisplayInformation.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\HoverState.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\HoverStateChangeEventArgs.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\IPanel.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColors.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsBlack.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsBlue.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsBse.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsOffice.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsOffice2007Black.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsOffice2007Blue.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsOffice2007Silver.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelColorsRed.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelSettingsManager.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelStyle.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\PanelStyleChangeEventArgs.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\UseAntiAlias.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\UseClearTypeGridFit.cs" />
+    <Compile Include="UI\BSE.Windows.Forms\XPander\XPanderPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\XPanderPanel.Designer.cs">
+      <DependentUpon>XPanderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\XPanderPanelList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\XPanderPanelList.Designer.cs">
+      <DependentUpon>XPanderPanelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BSE.Windows.Forms\XPander\XPanderStateChangeEventArgs.cs" />
+    <Compile Include="WebPanelCommons\NativeMethods.cs" />
+    <Compile Include="UI\BigButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\CustumBlackPRenderer.cs" />
+    <Compile Include="UI\DarkGradientRender.cs" />
+    <Compile Include="UI\ExpandCollapse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\GradientColors.cs" />
+    <Compile Include="UI\LogTbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TablessControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BackGroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackGroundForm.Designer.cs">
+      <DependentUpon>BackGroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelAccount\Account.cs" />
+    <Compile Include="WebNet\WebNetCommunication.cs" />
+    <Compile Include="WebPanelAccount\WebPanelAuthData.cs" />
+    <Compile Include="WebPanelAccount\AccountManager.cs" />
+    <Compile Include="WebPanelActionResult\ActionResultBase.cs" />
+    <Compile Include="WebPanelActionResult\ActionResultType.cs" />
+    <Compile Include="WebPanelActionResult\ActionResultCode.cs" />
+    <Compile Include="WebPanelActionsTask\ActionAddTask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelActionsTask\ActionEditTask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelActionsTask\ActionRemoveTask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelActionsTask\ActionTaskBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelActionsTask\ReportProgressStruct.cs" />
+    <Compile Include="WebPanelActionsTask\ViewStatus.cs" />
+    <Compile Include="WebPanelCommons\AccountSelectEventArgs.cs" />
+    <Compile Include="WebPanelCommons\CommandArgs.cs" />
+    <Compile Include="WebPanelCommons\CharValidateAttribute.cs" />
+    <Compile Include="WebPanelCommons\EnumViewHelp\EnumTypeConverter.cs" />
+    <Compile Include="WebPanelCommons\EnumViewHelp\FieldDisplayNameAttribute.cs" />
+    <Compile Include="WebPanelCommons\ReportProgress.cs" />
+    <Compile Include="WebPanelCommons\SimpleEventArgs.cs" />
+    <Compile Include="WebPanelMisc\BooleanTypeConverter.cs" />
+    <Compile Include="WebPanelMisc\StrHelpClass.cs" />
+    <Compile Include="WebPanelMisc\xRandom.cs" />
+    <Compile Include="WebPanelModules\cPanel\ApiVersion.cs" />
+    <Compile Include="WebPanelModules\cPanel\API\cPanel.SubDomain.cs" />
+    <Compile Include="WebPanelModules\cPanel\API\cPanelAPI.Domain.cs" />
+    <Compile Include="WebPanelActionResult\WebPanelModules.ActionResult\cPanel_ActionResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebPanelModules\cPanel\API\cPanelAPI.cs" />
+    <Compile Include="WebPanelItems\WebPanelModules.Items\cPanel_Domain.cs" />
+    <Compile Include="WebPanelItems\WebPanelModules.Items\cPanel_SubDomain.cs" />
+    <Compile Include="WebPanelOptionData\cPanel_DomainOption.cs" />
+    <Compile Include="WebPanelModules\DirectAdmin\API\DirectAdmin.Domain.cs" />
+    <Compile Include="WebPanelModules\DirectAdmin\API\DirectAdmin.SubDomain.cs" />
+    <Compile Include="WebPanelModules\DirectAdmin\API\DirectAdminAPI.cs" />
+    <Compile Include="WebPanelItems\WebPanelModules.Items\DirectAdmin_Domain.cs" />
+    <Compile Include="WebPanelActionResult\WebPanelModules.ActionResult\DirectAdmin_ActionResult.cs" />
+    <Compile Include="WebPanelOptionData\DirectAdmin_DomainOption.cs" />
+    <Compile Include="WebPanelModules\ISPmanager\Api\ISPmanager.Domain.cs" />
+    <Compile Include="WebPanelModules\ISPmanager\Api\ISPmanagerAPI.cs" />
+    <Compile Include="WebPanelActionResult\WebPanelModules.ActionResult\ISPmanager_ActionResult.cs" />
+    <Compile Include="WebPanelItems\WebPanelModules.Items\ISPmanager_Domain.cs" />
+    <Compile Include="WebPanelOptionData\ISPmanager_DomainOption.cs" />
+    <Compile Include="WebPanelModules\WebPanelApiBase.cs" />
+    <Compile Include="WebPanelModules\WebPanelType.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccountViewForm.resx">
+      <DependentUpon>AccountViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActionsTaskForm.resx">
+      <DependentUpon>ActionsTaskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackGroundForm.resx">
+      <DependentUpon>BackGroundForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BSE.Windows.Forms\XPander\Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BSE.Windows.Forms\XPander\XPanderPanel.resx">
+      <DependentUpon>XPanderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BSE.Windows.Forms\XPander\XPanderPanelList.resx">
+      <DependentUpon>XPanderPanelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\LeftAlignTabcontrol.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebPanelItems\DomainItem.cs" />
+    <Compile Include="WebPanelItems\SubDomainItem.cs" />
+    <Compile Include="WebPanelItems\WebPanelItemBase.cs" />
+    <Compile Include="WebPanelItems\WebPanelItemCollection.cs" />
+    <Compile Include="WebPanelOptionData\DNSZoneOption.cs" />
+    <Compile Include="WebPanelOptionData\IOptionData.cs" />
+    <None Include="README.md" />
+    <None Include="UI\BSE.Windows.Forms\ProgressBar\vssver2.scc" />
+    <None Include="UI\BSE.Windows.Forms\Renderer\vssver2.scc" />
+    <None Include="UI\BSE.Windows.Forms\Splitter\vssver2.scc" />
+    <None Include="UI\BSE.Windows.Forms\XPander\vssver2.scc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="PublicPrivateKeyFile.snk" />
+    <None Include="Resources\chevrondown.png" />
+    <None Include="Resources\chevronleft.png" />
+    <None Include="Resources\chevronright.png" />
+    <None Include="Resources\chevronup.png" />
+    <None Include="Resources\closepanel.png" />
+    <None Include="Resources\collapse.jpg" />
+    <None Include="Resources\collapse_h.jpg" />
+    <None Include="Resources\control_play_blue.png" />
+    <None Include="Resources\control_stop_blue.png" />
+    <None Include="Resources\arrow_left.png" />
+    <None Include="Resources\arrow_right.png" />
+    <None Include="Resources\buttonShow.png" />
+    <None Include="Resources\buttonShow2.png" />
+    <None Include="Resources\buttonShow2In.png" />
+    <None Include="Resources\buttonShow4.png" />
+    <None Include="Resources\buttonShow4In.png" />
+    <None Include="Resources\buttonShowIn.png" />
+    <None Include="Resources\scroll_pane_detail.png" />
+    <None Include="Resources\loading52.gif" />
+    <None Include="Resources\error.png" />
+    <Content Include="bin\Debug\BatchDomainTools.exe" />
+    <Content Include="bin\Debug\BatchDomainTools.pdb" />
+    <Content Include="bin\Release\BatchDomainTools.exe" />
+    <None Include="Resources\exclamation.gif" />
+    <None Include="Resources\cPanel.png" />
+    <None Include="Resources\DirectAdminPanel2.png" />
+    <None Include="Resources\ISPmanagerPanel.png" />
+    <None Include="Resources\cPanel.ico" />
+    <None Include="Resources\DirectAdmin.ico" />
+    <None Include="Resources\ISPmanager.ico" />
+    <None Include="Resources\DomainTabIconwWorld.png" />
+    <None Include="Resources\SubDomainTabWorld1.png" />
+    <None Include="Resources\OperationImages.png" />
+    <None Include="Resources\AccountTabIcon.png" />
+    <None Include="Resources\TabUpdateIcon2.png" />
+    <None Include="Resources\CleenPageIcon.png" />
+    <None Include="Resources\AddFromFileIcon2.png" />
+    <None Include="Resources\AddFromFileIcon1.png" />
+    <None Include="Resources\CleenPageIcon1.png" />
+    <None Include="Resources\AddFromBufferIcon.png" />
+    <None Include="Resources\AddAccount3.png" />
+    <None Include="Resources\DarkWizardHeaderBack.jpg" />
+    <None Include="Resources\RemoveAccount.png" />
+    <None Include="Resources\EditAccount.png" />
+    <None Include="Resources\AccountsTabIcon.png" />
+    <None Include="Resources\DefaultToolbarBack.png" />
+    <None Include="Resources\AddIcon.png" />
+    <None Include="Resources\ReloadIcon.png" />
+    <None Include="Resources\RemoveIcon.png" />
+    <None Include="Resources\EditIcon.png" />
+    <Content Include="faicon.ico" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="ProgramIcon.ico" />
+    <None Include="Resources\DeleteTaskIcon.png" />
+    <None Include="Resources\EditTaskIcon.png" />
+    <None Include="Resources\AddTaskIcon.png" />
+    <None Include="Resources\idea1.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\AccountMenuImage.png" />
+    <None Include="Resources\cllipboardAdd.png" />
+    <None Include="Resources\fileAdd.png" />
+    <None Include="Resources\clearList.png" />
+    <None Include="Resources\settingsWhite.png" />
+    <None Include="Resources\ISPmanagerSetting.png" />
+    <None Include="Resources\cPanelSetting.png" />
+    <None Include="Resources\DirectAdminSetting.png" />
+    <None Include="Resources\ActionStopIcon.png" />
+    <None Include="Resources\ActionStartIcon.png" />
+    <None Include="Resources\ActionStopIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
