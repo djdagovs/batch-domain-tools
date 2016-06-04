@@ -1,4 +1,15 @@
-# web-archive-checker
-The program for mass checks on the presence of domains in the web archive(archive.org).
+#Batch domain tools
 
-Программа для массовой проверки доменов на наличия в веб-архиве.
+Batch Domain Tools - программа для пакетной работы с доменнами и поддоменами в панелях управления хостингом.
+
+Поддерживает следующие панели управления хостингом:
+
+* ISPmanager.
+* cPanel.
+* DirectAdmin.
+
+Поддерживает следующие операции с доменнами и поддоменами:
+
+* Добавления.
+* Удаления.
+* Редактированние(смена DNS, IP(а-записи) и др.).
